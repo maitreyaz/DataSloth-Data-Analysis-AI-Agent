@@ -3,8 +3,10 @@
 DataSloth is a personal Data Analysis AI Agent capable of processing and analyzing CSV files uploaded by the user, and generating insights and visualizations.
 
 This is an interactive Streamlit App with an Autonomous AI Agent at the backend that :
-  - Answer your queries.
-  - Generate Matplotlib Charts and tables.
+  - Answers your queries.
+  - Generates Matplotlib Charts and tables.
+
+![image](https://github.com/maitreyaz/DataSloth-Data-Analysis-AI-Agent/assets/83835081/7ff460c2-fe6d-48e8-b018-c0da397625da)
 
 ### App Features
   - Upload your CSV File in the file uploader located on the sidebar of the Streamlit app.
@@ -26,4 +28,3 @@ This is an interactive Streamlit App with an Autonomous AI Agent at the backend 
     - ```poetry env list```
   - Finally, run the Streamlit app : ```streamlit run app.py```
 
-![image](https://github.com/maitreyaz/DataSloth-Data-Analysis-AI-Agent/assets/83835081/7ff460c2-fe6d-48e8-b018-c0da397625da)
