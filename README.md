@@ -19,6 +19,7 @@ This is an interactive Streamlit App with an Autonomous AI Agent at the backend 
   - Clone this repo.
   - Open this project in your favourite IDE.
   - In the terminal, make sure you have poetry installed by running ```poetry --version```. Run ```pip install poetry``` if you don't have poetry installed.
+  - Run ```cd data-analysis-agent```
   - Now, in the ``app.py`` file, select the LLM you want to pass to the model (Comment/ Uncomment the desired code blocks at the beginning of the file).
   - Set you API Key for the chosen LLM by running ```$env:OPENAI_API_KEY="Your API Key Here"``` or ```$env:GROQ_API_KEY="<Your API Key Here>"```.
   - Now, run the following poetry commands :
