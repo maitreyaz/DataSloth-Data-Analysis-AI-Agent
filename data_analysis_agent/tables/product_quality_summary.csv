@@ -1,0 +1,4 @@
+Product Quality Variant,Air Temperature Mean,Air Temperature Std,Process Temperature Mean,Process Temperature Std,Rotational Speed Mean,Rotational Speed Std,Torque Mean,Torque Std,Count
+L,25.5,1.2,35.2,1.3,1500,50,40,2,6000
+M,28.3,1.5,37.1,1.2,1600,60,45,3,2997
+H,30.1,1.1,39.5,1.4,1700,55,50,2,1003
