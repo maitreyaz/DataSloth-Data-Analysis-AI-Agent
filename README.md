@@ -25,3 +25,5 @@ This is an interactive Streamlit App with an Autonomous AI Agent at the backend 
     - ```poetry shell```
     - ```poetry env list```
   - Finally, run the Streamlit app : ```streamlit run app.py```
+
+![image](https://github.com/maitreyaz/DataSloth-Data-Analysis-AI-Agent/assets/83835081/7ff460c2-fe6d-48e8-b018-c0da397625da)
