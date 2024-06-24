@@ -16,8 +16,11 @@ from langchain_openai import ChatOpenAI
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
+from llms.py import groq_llm
+
 # Initializing the LLM
-llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY, temperature=0.0)
+# llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY, temperature=0.0)
+llm = groq_llm
 
 
 st.set_page_config(
