@@ -11,7 +11,10 @@ import os
 from langchain_openai import ChatOpenAI
 
 # Secure retrieval of the API key from environment variables
-OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+# OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 # Initializing the LLM
 llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY, temperature=0.0)
