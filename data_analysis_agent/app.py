@@ -7,20 +7,32 @@ from utils import check_image_file_exists, read_image_file
 
 import os
 
+# from fastapi import FastAPI
+# from langserve import add_routes
+#
+# fastapiapp = FastAPI(
+#     title="Data Analysis Agent Monitoring - LangServe",
+#     version="1.0",
+#     description="Let's monitor the pandas agent running in the streamlit app..."
+# )
+
+
 #----------------------ChatOpenAI-------------------
 from langchain_openai import ChatOpenAI
 
 # Secure retrieval of the API key from environment variables
 # OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
-
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
-
-from llms import groq_llm
 
 # Initializing the LLM
-# llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY, temperature=0.0)
-llm = groq_llm
+llm = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY, temperature=0.0)
+
+# #----------------------GROQ-------------------
+# from langchain_groq import ChatGroq
+#
+# # Initialize the LLM
+# groq_api_key = os.environ['GROQ_API_KEY'] # Setup your API Key
+# llm = ChatGroq(groq_api_key=groq_api_key, model_name='mixtral-8x7b-32768', temperature=0.0)
 
 
 st.set_page_config(
@@ -70,6 +82,9 @@ with main_col:
             with st.chat_message('assistant'):
                 st.image(im)
 
+                # Generate a unique key for each download button
+                download_button_key = f"download_button_{message['content']}"
+
                 # Download button for the image
                 image_data = read_image_file(im)
                 st.download_button(label="Download image",
@@ -93,6 +108,11 @@ with main_col:
             prefix=PREFIX.format(chat_history="\n".join([f"{entry['role'].capitalize()}: {entry['content']}" for entry in st.session_state.chat_history[-6:]]), additional_info_dataset=st.session_state.summarized_dataset_info),
             verbose=True
         )
+
+        # import uvicorn
+        # import subprocess
+        # add_routes(fastapiapp, agent_executor, path="/pandas_agent")
+        # subprocess.Popen(["uvicorn", "app:fastapiapp", "--host", "localhost", "--port", "8003"])
 
         # Get user input
         user_input = st.chat_input("Ask your question here...")
@@ -131,7 +151,7 @@ with right_col:
             for img_path in st.session_state.img_list:
                 st.image(img_path)
                 image_data = read_image_file(img_path)
-                st.download_button(label="Download Image",
+                st.download_button(label="Download",
                                    data=image_data,
                                    file_name=os.path.basename(img_path),
                                    mime="image/png")
