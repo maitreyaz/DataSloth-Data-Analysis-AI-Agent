@@ -1,4 +1,4 @@
-import st
+import streamlit as st
 
 #------------------OPENAI------------
 from langchain_openai import ChatOpenAI
