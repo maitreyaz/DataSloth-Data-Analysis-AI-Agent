@@ -18,7 +18,8 @@ def check_image_file_exists(text):
         if os.path.isfile(image_location):
             return fr"{image_location}"  # Return the image location if detected in agent response and actually exists
         else:
-            return "0"  # Image location detected in agent response but doesn't exist
+            # return "0"  # Image location detected in agent response but doesn't exist
+            return 0  # Image location detected in agent response but doesn't exist
             # return fr"{image_location}"
     else:
         return -1  # Image location not detected in agent response
