@@ -15,4 +15,5 @@ from langchain_groq import ChatGroq
 # Initialize the LLM
 # groq_api_key = os.environ['GROQ_API_KEY'] # Setup your API Key
 groq_api_key = st.secrets['GROQ_API_KEY'] # Setup your API Key
-groq_llm = ChatGroq(groq_api_key=groq_api_key, model_name='mixtral-8x7b-32768', temperature=0.0)
+# groq_llm = ChatGroq(groq_api_key=groq_api_key, model_name='mixtral-8x7b-32768', temperature=0.0)
+groq_llm = ChatGroq(groq_api_key=groq_api_key, model_name='llama3-8b-8192', temperature=0.0)
